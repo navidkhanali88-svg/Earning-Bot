@@ -531,7 +531,7 @@
                 </div>
                 <div class="progress-text">
                     <span>0 টাকা</span>
-                    <span>20 টাকা</span>
+                    <span1000 টাকা</span>
                 </div>
             </div>
             
@@ -541,7 +541,7 @@
             
             <div class="action-buttons">
                 <button class="btn btn-primary" id="watch-ad-btn" onclick="watchAd()">
-                    <i class="fas fa-play"></i> বিজ্ঞাপন দেখুন (২ টাকা)
+                    <i class="fas fa-play"></i> বিজ্ঞাপন দেখুন (১০টাকা)
                 </button>
                 <button class="btn btn-success" id="auto-ad-btn" onclick="startAutoAds()">
                     <i class="fas fa-robot"></i> স্বয়ংক্রিয় বিজ্ঞাপন
@@ -576,7 +576,7 @@
                     <div>আমন্ত্রিত: <strong id="referral-count">0</strong></div>
                     <div>আয়: <strong id="referral-earnings">0.00</strong> টাকা</div>
                 </div>
-                <p style="font-size: 14px; margin-bottom: 10px;">আপনার রেফারেল লিঙ্ক শেয়ার করুন এবং প্রতিটি বন্ধুর জন্য ৫ টাকা বোনাস পান!</p>
+                <p style="font-size: 14px; margin-bottom: 10px;">আপনার রেফারেল লিঙ্ক শেয়ার করুন এবং প্রতিটি বন্ধুর জন্য ৫০ টাকা বোনাস পান!</p>
                 <div class="referral-link-container">
                     <input type="text" id="referral-link" readonly>
                     <button id="copy-referral" onclick="copyReferralLink()">কপি</button>
@@ -584,9 +584,9 @@
             </div>
             
             <div class="rate-info">
-                <p><i class="fas fa-ad"></i> প্রতি বিজ্ঞাপন = ২ টাকা</p>
-                <p><i class="fas fa-money-bill-wave"></i> ন্যূনতম উত্তোলন: ২০ টাকা</p>
-                <p><i class="fas fa-gift"></i> রেফারেল বোনাস: ৫ টাকা প্রতি ব্যবহারকারী</p>
+                <p><i class="fas fa-ad"></i> প্রতি বিজ্ঞাপন = ১০ টাকা</p>
+                <p><i class="fas fa-money-bill-wave"></i> ন্যূনতম উত্তোলন: ১০০০ টাকা</p>
+                <p><i class="fas fa-gift"></i> রেফারেল বোনাস: ৫০ টাকা প্রতি ব্যবহারকারী</p>
             </div>
         </div>
         
@@ -596,7 +596,7 @@
             
             <div class="action-buttons">
                 <button class="btn btn-primary" id="watch-ad-btn-earn" onclick="watchAd()">
-                    <i class="fas fa-play"></i> বিজ্ঞাপন দেখুন (২ টাকা)
+                    <i class="fas fa-play"></i> বিজ্ঞাপন দেখুন (১০ টাকা)
                 </button>
                 <button class="btn btn-success" id="auto-ad-btn-earn" onclick="startAutoAds()">
                     <i class="fas fa-robot"></i> স্বয়ংক্রিয় বিজ্ঞাপন
@@ -612,7 +612,7 @@
                     <div>আমন্ত্রিত: <strong id="referral-count-earn">0</strong></div>
                     <div>আয়: <strong id="referral-earnings-earn">0.00</strong> টাকা</div>
                 </div>
-                <p style="font-size: 14px; margin-bottom: 10px;">আপনার রেফারেল লিঙ্ক শেয়ার করুন এবং প্রতিটি বন্ধুর জন্য ৫ টাকা বোনাস পান!</p>
+                <p style="font-size: 14px; margin-bottom: 10px;">আপনার রেফারেল লিঙ্ক শেয়ার করুন এবং প্রতিটি বন্ধুর জন্য ৫০ টাকা বোনাস পান!</p>
                 <div class="referral-link-container">
                     <input type="text" id="referral-link-earn" readonly>
                     <button id="copy-referral-earn" onclick="copyReferralLink()">কপি</button>
@@ -777,7 +777,7 @@
             
             // উত্তোলন পেজে গেলে মোট আয় আপডেট করুন
             if (pageId === 'withdraw-page') {
-                document.getElementById('total-earned-withdraw').textContent = (earnedPoints + referralEarnings).toFixed(2);
+                document.getElementById('total-earned-withdraw').textContent = (earnedPoints + referralEarnings).toFixed,35);
             }
             
             // আর্ন পেজে গেলে ডেটা আপডেট করুন
@@ -808,7 +808,7 @@
                 // Check if this is first visit and not already referred
                 if (!localStorage.getItem('referredBy')) {
                     localStorage.setItem('referredBy', referrerId);
-                    showNotification('আপনি একটি রেফারেল লিঙ্ক ব্যবহার করে যোগদান করেছেন! রেফারার ৫ টাকা বোনাস পাবেন।', 'success');
+                    showNotification('আপনি একটি রেফারেল লিঙ্ক ব্যবহার করে যোগদান করেছেন! রেফারার ৫০ টাকা বোনাস পাবেন।', 'success');
                     
                     // In a real app, you would send this to your backend
                     setTimeout(() => {
@@ -877,26 +877,26 @@
         // Save user data to localStorage
         function saveUserData() {
             localStorage.setItem('watchedAdsCount', watchedAdsCount);
-            localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
+            localStorage.setItem('earnedPoints', earnedPoints.toFixed(10));
             localStorage.setItem('referralCount', referralCount);
-            localStorage.setItem('referralEarnings', referralEarnings.toFixed(2));
+            localStorage.setItem('referralEarnings', referralEarnings.toFixed(50));
         }
 
         // Update all UI elements
         function updateUI() {
             document.getElementById('watched-ads').textContent = watchedAdsCount;
-            document.getElementById('earned-money').textContent = (earnedPoints + referralEarnings).toFixed(2);
+            document.getElementById('earned-money').textContent = (earnedPoints + referralEarnings).toFixed(10);
             document.getElementById('referral-count').textContent = referralCount;
-            document.getElementById('referral-earnings').textContent = referralEarnings.toFixed(2);
+            document.getElementById('referral-earnings').textContent = referralEarnings.toFixed 50);
             updateProgress();
         }
 
         // Update progress bar and text
         function updateProgress() {
-            const progressPercent = (earnedPoints / MIN_WITHDRAW_TAKA) * 100;
+            const progressPercent = (earnedPoints / MIN_WITHDRAW_TAKA) * 1000;
             
             document.getElementById('progress-fill').style.width = `${Math.min(progressPercent, 100)}%`;
-            document.getElementById('ads-progress').textContent = `${earnedPoints.toFixed(2)}/${MIN_WITHDRAW_TAKA} টাকা`;
+            document.getElementById('ads-progress').textContent = `${earnedPoints.toFixed(10)}/${MIN_WITHDRAW_TAKA} টাকা`;
         }
 
         // Function to watch an ad and earn points
@@ -928,7 +928,7 @@
                     createCoinAnimation();
                     
                     // Show success notification
-                    showNotification(`২ টাকা যোগ হয়েছে! আপনার ব্যালেন্স: ${(earnedPoints + referralEarnings).toFixed(2)} টাকা`, 'success');
+                    showNotification(` ১০ টাকা যোগ হয়েছে! আপনার ব্যালেন্স: ${(earnedPoints + referralEarnings).toFixed (10)} টাকা`, 'success');
                     
                     // Check if earned enough for withdrawal
                     if (earnedPoints + referralEarnings >= MIN_WITHDRAW_TAKA) {
@@ -956,7 +956,7 @@
                     document.getElementById('watch-ad-btn-earn').disabled = false;
                     
                     if (isAutoMode) {
-                        setTimeout(watchAd, 10000); // Retry after 10 seconds
+                        setTimeout(watchAd, 10000); // Retry after   2 seconds
                     }
                 });
             } catch (error) {
@@ -1156,4 +1156,5 @@
     </script>
 </body>
 </html>
+
 
